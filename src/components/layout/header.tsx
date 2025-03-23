@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="font-bold text-xl">Brand Name</div>
+        <div className="font-bold text-xl">Mendelu webshop</div>
         <nav>
           <ul className="flex space-x-6">
             <li>

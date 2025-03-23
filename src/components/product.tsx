@@ -8,6 +8,11 @@ import {
   CardTitle
 } from '@/components/ui/card'
 import { ShoppingCart } from 'lucide-react'
+// import type { ProductObject } from '@/types/products'
+
+// type ProductProps = {
+//   product: ProductObject
+// }
 
 const Product = () => {
   return (

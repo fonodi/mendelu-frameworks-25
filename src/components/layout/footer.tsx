@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-4 border-t text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Brand Name. All rights reserved.
+          &copy; {new Date().getFullYear()} Mendelu webshop. All rights reserved.
         </div>
       </div>
     </footer>
