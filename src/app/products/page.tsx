@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 export default async function ProductPage() {
   // 'https://67e00bf47635238f9aac5bcc.mockapi.io/products'
+  // http://localhost:3000/api/products
 
   return (
     <div className="max-w-sm min-w-full gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

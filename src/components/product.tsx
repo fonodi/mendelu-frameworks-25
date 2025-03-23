@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-import { ShoppingCart } from 'lucide-react'
+import { ShoppingCart, Heart } from 'lucide-react'
 // import type { ProductObject } from '@/types/products'
 
 // type ProductProps = {
@@ -30,10 +30,16 @@ const Product = () => {
         </p>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          Add to Cart
-        </Button>
+        <div className="w-full flex gap-2">
+          <Button className="flex justify-center">
+            <Heart className="h-4 w-4" />
+          </Button>
+
+          <Button className="grow">
+            <ShoppingCart className="mr-2 h-4 w-4" />
+            Add to Cart
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   )
