@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -7,33 +10,42 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-import { ShoppingCart, Heart } from 'lucide-react'
-// import type { ProductObject } from '@/types/products'
+import { ShoppingCart, Heart, HeartOff } from 'lucide-react'
+import type { ProductObject } from '@/types/products'
 
-// type ProductProps = {
-//   product: ProductObject
-// }
+type ProductProps = {
+  product: ProductObject
+}
 
-const Product = () => {
+const Product = ({ product }: ProductProps) => {
+  const [isFavourite, setIsFavourite] = useState(false)
+
+  const toggleFavourite = () => {
+    setIsFavourite((state) => !state)
+  }
+
   return (
     <Card className="overflow-hidden">
       <div className="aspect-video bg-muted relative" />
       <CardHeader>
-        <CardTitle>Premium Product</CardTitle>
-        <CardDescription>High-quality product with amazing features</CardDescription>
+        <CardTitle>{product.title}</CardTitle>
+        <CardDescription>{product.department}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-2xl font-bold">$99.99</p>
-        <p className="text-sm text-muted-foreground mt-2">
-          This premium product offers exceptional quality and durability. Perfect for everyday use
-          with its sleek design and practical features.
-        </p>
+        <p className="text-2xl font-bold">{`${product.price}€`}</p>
+        <p className="text-sm text-muted-foreground mt-2">{product.description}</p>
       </CardContent>
       <CardFooter>
         <div className="w-full flex gap-2">
-          <Button className="flex justify-center">
-            <Heart className="h-4 w-4" />
-          </Button>
+          {isFavourite ? (
+            <Button className="flex justify-center" onClick={toggleFavourite}>
+              <HeartOff className="h-4 w-4" />
+            </Button>
+          ) : (
+            <Button className="flex justify-center" onClick={toggleFavourite}>
+              <Heart className="h-4 w-4" />
+            </Button>
+          )}
 
           <Button className="grow">
             <ShoppingCart className="mr-2 h-4 w-4" />
